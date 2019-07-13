@@ -1,0 +1,61 @@
+@import "@/styles/variables.scss";
+
+.table-component{
+    max-width: fit-content;
+    overflow: auto;
+}
+
+.table{
+    overflow: auto;
+    padding: 5px;
+    border: 2px solid #ddd;
+    &::-webkit-scrollbar{
+        height: 1px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #585858;
+        height: 1px;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: #dbdbdb;
+    }
+    &-headers, &-data{
+        display: grid;
+        grid-template-columns: 50px 200px 150px 180px;
+        margin-top: 1em;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    &_header{
+        cursor: pointer;
+        padding: 0 10px;
+    }
+    &-data{
+        &_item{
+            @include flex_horizontal_center();
+            flex-direction: column;
+            padding: 10px;
+            .actions{
+                display: flex;
+                justify-content: space-around;
+            }
+            textarea, input{
+                @include input_reset();
+                color: $dark_blue;
+            }
+        }
+        &_selected{
+            background-color: #f1f1f1;
+        }
+        &:hover{
+            cursor: pointer;
+            transition: .2s;
+            background-color: #f1f1f1;
+        }
+    }
+    &-actions{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

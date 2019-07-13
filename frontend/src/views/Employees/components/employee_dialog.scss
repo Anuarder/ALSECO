@@ -1,0 +1,52 @@
+@import "@/styles/variables.scss";
+
+.employee-dialog{
+    font-weight: 500;
+    .input-block{
+        margin: 7px 0;
+        display: flex;
+        label{
+            margin-right: 10px;
+        }
+        input{
+            @include input_reset();
+            font-weight: 400;
+            width: 100%;
+            &:focus{
+                color: $dark_blue;
+            }
+        }
+    }
+    &_table{
+        &-title{
+            margin: 1em 0;
+        }
+        &-add{
+            button{
+                @include input_reset();
+                @include flex_center();
+                cursor: pointer;
+                font-size: .9rem;
+                color: $dark_blue;
+            }
+            margin-bottom: .5em;
+            select{
+                margin: .5rem 0;
+                @include input_reset();
+                font-size: .9rem;
+                border: 1px solid #ddd;
+            }
+        }
+    }
+    
+    &_actions{
+        margin-top: 1em;
+        @include flex_vertical_center();
+        button{
+            cursor: pointer;
+            @include input_reset();
+            margin-right: 10px;
+            font-size: .9rem;
+        }
+    }
+}

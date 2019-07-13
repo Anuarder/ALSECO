@@ -1,0 +1,48 @@
+$dark_blue: #283772;
+$light_blue: #00B6F0;
+
+@mixin flex_center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin flex_vertical_center() {
+	display: flex;
+	align-items: center;
+}
+@mixin flex_horizontal_center() {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin input_reset() {
+	outline: none;
+	background: none;
+	border: none;
+}
+
+@mixin button_hover($opacity){
+    cursor: pointer;
+    transition: .2s;
+    opacity: $opacity;
+}
+
+@mixin media($breakpoint) {
+	@if ($breakpoint == "desktop") {
+		@media screen and (min-width: 1601px) {
+			@content;
+		}
+	} @else if($breakpoint == "laptop") {
+		@media screen and (min-width: 1200px) and (max-width: 1600px) {
+			@content;
+		}
+	} @else if($breakpoint == "tablet") {
+		@media screen and (min-width: 768px) and (max-width: 1199px) {
+			@content;
+		}
+	} @else if($breakpoint == "phone") {
+		@media screen and (max-width: 767px) {
+			@content;
+		}
+	}
+}

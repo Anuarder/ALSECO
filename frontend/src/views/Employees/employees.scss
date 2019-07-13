@@ -1,0 +1,25 @@
+@import "@/styles/variables.scss";
+
+
+.employee-context{
+    cursor: pointer;
+    position: absolute;
+    border: 1px solid #ddd;
+    padding: 5px;
+    color: #fff;
+    background-color: $dark_blue;
+}
+
+.pagination{
+    @include flex_vertical_center();
+    justify-content: flex-end;
+    button{
+        @include input_reset();
+        padding: 5px;
+        border: 1px solid #ddd;
+        margin-left: 5px;
+        &:hover{
+            @include button_hover(.7)
+        }
+    }
+}
